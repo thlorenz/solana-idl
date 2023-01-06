@@ -26,7 +26,8 @@ pub struct Idl {
     pub events: Option<Vec<IdlEvent>>,
     #[serde(skip_serializing_if = "Option::is_none", default)]
     pub errors: Option<Vec<IdlErrorCode>>,
-    pub metadata: IdlMetadata,
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub metadata: Option<IdlMetadata>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]

@@ -5,6 +5,5 @@ edition = "2021"
 license = "MIT"
 description = "Rust Solana IDL types definitions de/serializable with serde."
 
-
 [dependencies]
 serde = { version = "1.0.130", features = ["derive"] }

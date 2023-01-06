@@ -22,7 +22,8 @@ pub struct IdlInstruction {
     pub args: Vec<IdlField>,
     #[serde(skip_serializing_if = "Option::is_none", default)]
     pub default_optional_accounts: Option<bool>,
-    pub discriminant: IdlInstructionDiscriminant,
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub discriminant: Option<IdlInstructionDiscriminant>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
