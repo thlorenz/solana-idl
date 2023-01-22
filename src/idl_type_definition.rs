@@ -4,6 +4,9 @@ use serde::{Deserialize, Serialize};
 // -----------------
 // IdlTypeDefinitionTy
 // -----------------
+
+/// The underlying type of a [IdlTypeDefinition], namely an enum with variants or a struct with
+/// fields.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase", tag = "kind")]
 pub enum IdlTypeDefinitionTy {
@@ -14,9 +17,14 @@ pub enum IdlTypeDefinitionTy {
 // -----------------
 // IdlTypeDefinition
 // -----------------
+
+/// Custom type definition.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct IdlTypeDefinition {
+    /// Name of the struct or enum.
     pub name: String,
+
+    /// Underlying type description.
     #[serde(rename = "type")]
     pub ty: IdlTypeDefinitionTy,
 }
