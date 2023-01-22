@@ -1,9 +1,11 @@
 [package]
 name = "solana_idl"
-version = "0.1.0"
+version = "0.0.0"
 edition = "2021"
 license = "MIT"
 description = "Rust Solana IDL types definitions de/serializable with serde."
+authors = ["Thorsten Lorenz <thlorenz@gmx.de>"]
+repository = "https://github.com/ironforge-cloud/solana-idl"
 
 [dependencies]
 serde = { version = "1.0.130", features = ["derive"] }
