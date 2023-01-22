@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 /// Types that can be included in accounts or user defined structs or instruction args of an IDL.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub enum IdlType {
     Array(Box<IdlType>, usize),

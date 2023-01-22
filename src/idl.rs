@@ -7,7 +7,7 @@ use crate::{
 use super::{idl_type::IdlType, idl_type_definition::IdlTypeDefinition};
 
 /// IDL that is compatible with what anchor and shank extract from a solana program.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Idl {
     /// Version of the Solana contract at the time the IDL was generated.
     pub version: String,
@@ -48,7 +48,7 @@ pub struct Idl {
 }
 
 /// A constant defined in the program.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlConst {
     pub name: String,
     #[serde(rename = "type")]
@@ -57,7 +57,7 @@ pub struct IdlConst {
 }
 
 /// Program state found in the program..
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlState {
     #[serde(rename = "struct")]
     pub strct: IdlTypeDefinition,
@@ -65,14 +65,14 @@ pub struct IdlState {
 }
 
 /// A type of event emitted by the program.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlEvent {
     pub name: String,
     pub fields: Vec<IdlEventField>,
 }
 
 /// A field that is part of a struct of an [IdlTypeDefinition].
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlEventField {
     pub name: String,
     #[serde(rename = "type")]

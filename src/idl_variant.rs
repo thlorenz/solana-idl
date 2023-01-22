@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use crate::{idl_field::IdlField, idl_type::IdlType};
 
 /// Underlying fields of a tuple or struct [IdlEnumVariant].
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(untagged)]
 pub enum EnumFields {
     Named(Vec<IdlField>),
@@ -11,7 +11,7 @@ pub enum EnumFields {
 }
 
 /// An enum variant which could be scalar (withouth fields) or tuple/struct (with fields).
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlEnumVariant {
     /// Name of the variant.
     pub name: String,
