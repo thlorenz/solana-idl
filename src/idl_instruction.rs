@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 // -----------------
 // IdlInstructions
 // -----------------
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlInstructions(pub Vec<IdlInstruction>);
 
 // -----------------
@@ -15,7 +15,7 @@ pub struct IdlInstructions(pub Vec<IdlInstruction>);
 /// one variant of that enum.
 /// We also expect it to only have one arg which is a custom type containing the
 /// respective instruction args.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub struct IdlInstruction {
     /// Name of the instruction.
@@ -44,7 +44,7 @@ pub struct IdlInstruction {
 }
 
 /// A discriminant for an instruction.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlInstructionDiscriminant {
     #[serde(rename = "type")]
     pub ty: IdlType,
@@ -65,7 +65,7 @@ impl From<u8> for IdlInstructionDiscriminant {
 // -----------------
 
 /// Accounts provided when calling an instruction.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub struct IdlAccounts {
     pub name: String,
@@ -73,7 +73,7 @@ pub struct IdlAccounts {
     pub accounts: Vec<IdlAccountItem>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(untagged)]
 pub enum IdlAccountItem {
     IdlAccount(IdlAccount),
@@ -81,14 +81,14 @@ pub enum IdlAccountItem {
 }
 
 fn is_false(x: &bool) -> bool {
-    return !x;
+    !x
 }
 
 // -----------------
 // IdlAccount
 // -----------------
 /// Metadata of an account that is provided when calling an instruction.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub struct IdlAccount {
     /// Name of the account used for documentation and by code generators.

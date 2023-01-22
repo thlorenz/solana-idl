@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use crate::idl_type::IdlType;
 
 /// A field in a struct, enum variant or [IdlInstruction] args.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlField {
     /// Name of the field.
     pub name: String,
