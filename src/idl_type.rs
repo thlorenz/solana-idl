@@ -8,6 +8,8 @@ pub enum IdlType {
     Bool,
     Bytes,
     Defined(String),
+    F32,
+    F64,
     I128,
     I16,
     I32,
