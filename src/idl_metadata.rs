@@ -9,4 +9,8 @@ pub struct IdlMetadata {
     /// The address of the program this IDL describes.
     #[serde(skip_serializing_if = "Option::is_none", default)]
     pub address: Option<String>,
+
+    /// The serializer used to encode and decode accounts, i.e. borsh.
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub serializer: Option<String>,
 }
