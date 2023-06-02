@@ -16,6 +16,8 @@ pub enum IdlType {
     I64,
     I8,
     Option(Box<IdlType>),
+    #[serde(rename = "coption")]
+    COption(Box<IdlType>),
     Tuple(Vec<IdlType>),
     PublicKey,
     String,
