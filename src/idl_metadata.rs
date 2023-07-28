@@ -4,7 +4,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct IdlMetadata {
     /// Origin of this IDL, i.e. if anchor or shank extracted it.
-    pub origin: String,
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub origin: Option<String>,
 
     /// The address of the program this IDL describes.
     #[serde(skip_serializing_if = "Option::is_none", default)]
