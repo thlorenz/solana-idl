@@ -1,11 +1,16 @@
-[package]
-name = "solana_idl"
+[workspace]
+members = ["classic"]
+resolver = "2"
+
+[workspace.package]
 version = "0.0.4"
 edition = "2021"
 license = "MIT"
 description = "Rust Solana IDL types definitions de/serializable with serde."
 authors = ["Thorsten Lorenz <thlorenz@gmx.de>"]
-repository = "https://github.com/ironforge-cloud/solana-idl"
+homepage = "https://github.com/thlorenz/solana-idl"
+repository = "https://github.com/thlorenz/solana-idl"
 
-[dependencies]
+[workspace.dependencies]
 serde = { version = "1.0.130", features = ["derive"] }
+solana-idl-classic = { path = "classic" }
