@@ -1,5 +1,5 @@
 [workspace]
-members = ["classic"]
+members = ["classic", "converter"]
 resolver = "2"
 
 [workspace.package]
@@ -12,5 +12,7 @@ homepage = "https://github.com/thlorenz/solana-idl"
 repository = "https://github.com/thlorenz/solana-idl"
 
 [workspace.dependencies]
+anchor-lang-idl = "0.1.0"
 serde = { version = "1.0.130", features = ["derive"] }
 solana-idl-classic = { path = "classic" }
+thiserror = "1.0.61"

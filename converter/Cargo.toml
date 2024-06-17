@@ -1,0 +1,17 @@
+[package]
+name = "solana-idl-converter"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description.workspace = true
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anchor-lang-idl = { workspace = true }
+solana-idl-classic = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
