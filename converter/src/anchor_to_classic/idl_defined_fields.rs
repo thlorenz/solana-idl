@@ -32,7 +32,7 @@ pub fn try_convert_to_idl_fields(
     idl_fields: IdlDefinedFields,
     context: &str,
 ) -> IdlConverterResult<Vec<solana_idl_classic::IdlField>> {
-    let fields = match idl_fields {
+    match idl_fields {
         IdlDefinedFields::Named(named_fields) => named_fields
             .into_iter()
             .map(|field| idl_field::try_convert(field, context))
@@ -49,6 +49,5 @@ pub fn try_convert_to_idl_fields(
                 })
             })
             .collect::<IdlConverterResult<Vec<_>>>(),
-    };
-    fields
+    }
 }

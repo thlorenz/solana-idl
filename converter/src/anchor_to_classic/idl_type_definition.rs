@@ -1,4 +1,6 @@
-use anchor_lang_idl::types::{IdlTypeDef as NewIdlTypeDef, IdlTypeDefTy as NewIdlTypeDefTy};
+use anchor_lang_idl::types::{
+    IdlAccount as NewIdlAccount, IdlTypeDef as NewIdlTypeDef, IdlTypeDefTy as NewIdlTypeDefTy,
+};
 use solana_idl_classic::{IdlTypeDefinition, IdlTypeDefinitionTy};
 
 use crate::{
@@ -39,3 +41,5 @@ pub fn try_convert_type_definition(
     let ty = try_convert_type_def_ty(ty, &name)?;
     Ok(IdlTypeDefinition { name, ty })
 }
+
+pub fn try_convert_from_account(idl_account: NewIdlAccount) {}
