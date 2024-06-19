@@ -1,6 +1,6 @@
 [package]
 name = "solana-idl-classic"
-version.workspace = true
+version = "0.0.4"
 authors.workspace = true
 repository.workspace = true
 homepage.workspace = true
