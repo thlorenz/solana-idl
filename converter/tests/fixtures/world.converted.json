@@ -1,0 +1,557 @@
+{
+  "version": "0.1.5",
+  "name": "world",
+  "instructions": [
+    {
+      "name": "add_entity",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "entity",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "world",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "extra_seed",
+          "type": {
+            "option": "string"
+          },
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 163
+      }
+    },
+    {
+      "name": "apply",
+      "accounts": [
+        {
+          "name": "component_program",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_system",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "instruction_sysvar_account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": "bytes",
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 248
+      }
+    },
+    {
+      "name": "apply2",
+      "accounts": [
+        {
+          "name": "bolt_system",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_1",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_1",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_2",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_2",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "instruction_sysvar_account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": "bytes",
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 120
+      }
+    },
+    {
+      "name": "apply3",
+      "accounts": [
+        {
+          "name": "bolt_system",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_1",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_1",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_2",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_2",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_3",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_3",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "instruction_sysvar_account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": "bytes",
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 254
+      }
+    },
+    {
+      "name": "apply4",
+      "accounts": [
+        {
+          "name": "bolt_system",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_1",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_1",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_2",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_2",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_3",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_3",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_4",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_4",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "instruction_sysvar_account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": "bytes",
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 223
+      }
+    },
+    {
+      "name": "apply5",
+      "accounts": [
+        {
+          "name": "bolt_system",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_1",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_1",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_2",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_2",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_3",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_3",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_4",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_4",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "component_program_5",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "bolt_component_5",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "instruction_sysvar_account",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": "bytes",
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 70
+      }
+    },
+    {
+      "name": "initialize_component",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "data",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "entity",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "component_program",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "instruction_sysvar_account",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 36
+      }
+    },
+    {
+      "name": "initialize_new_world",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "world",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "registry",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 23
+      }
+    },
+    {
+      "name": "initialize_registry",
+      "accounts": [
+        {
+          "name": "registry",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 189
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Entity",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "Registry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "worlds",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "World",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64",
+            "attrs": []
+          },
+          {
+            "name": "entities",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "Entity",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "Registry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "worlds",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "World",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64",
+            "attrs": []
+          },
+          {
+            "name": "entities",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidAuthority",
+      "msg": "Invalid authority for instruction"
+    },
+    {
+      "code": 6001,
+      "name": "WorldAccountMismatch",
+      "msg": "The provided world account does not match the expected PDA."
+    }
+  ],
+  "metadata": {
+    "origin": "anchor",
+    "address": "WorLD15A7CrDwLcLy4fRqtaTb9fbd8o8iqiEMUDse2n"
+  }
+}

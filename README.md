@@ -1,5 +1,9 @@
 # Solana IDL
 
+[![Run CI - Test](https://github.com/thlorenz/solana-idl/actions/workflows/ci-test.yml/badge.svg)](https://github.com/thlorenz/solana-idl/actions/workflows/ci-test.yml)
+[![Run CI - Format](https://github.com/thlorenz/solana-idl/actions/workflows/ci-fmt.yml/badge.svg)](https://github.com/thlorenz/solana-idl/actions/workflows/ci-fmt.yml)
+[![Run CI - Clippy](https://github.com/thlorenz/solana-idl/actions/workflows/ci-clippy.yml/badge.svg)](https://github.com/thlorenz/solana-idl/actions/workflows/ci-clippy.yml)
+
 Rust Solana IDL types definitions de/serializable with _serde_ extracted from [shank](https://crates.io/crates/shank).
 
 ## Development

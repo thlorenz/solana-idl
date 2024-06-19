@@ -1,0 +1,170 @@
+{
+  "version": "0.1.0",
+  "name": "anchor_counter",
+  "instructions": [
+    {
+      "name": "delegate",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "pda",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "CHECK The pda to delegate"
+        },
+        {
+          "name": "owner_program",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "buffer",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "CHECK The temporary buffer account used during delegation"
+        },
+        {
+          "name": "delegation_record",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "delegate_account_seeds",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "delegation_program",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 90
+      }
+    },
+    {
+      "name": "increment",
+      "accounts": [
+        {
+          "name": "counter",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 11
+      }
+    },
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "counter",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 175
+      }
+    },
+    {
+      "name": "process_undelegation",
+      "accounts": [
+        {
+          "name": "base_account",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "buffer",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "system_program",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "account_seeds",
+          "type": {
+            "vec": "bytes"
+          },
+          "attrs": []
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 196
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Counter",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "count",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "Counter",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "count",
+            "type": "u64",
+            "attrs": []
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "origin": "anchor",
+    "address": "852a53jomx7dGmkpbFPGXNJymRxywo3WsH1vusNASJRr"
+  }
+}

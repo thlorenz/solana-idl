@@ -1,0 +1,26 @@
+name: 'Setup Build Env'
+description: 'Install dependencies'
+
+inputs:
+  rust_toolchain_release:
+    description: "Choose the type of rust toolchain to use (stable/nightly)"
+    required: true
+  build_cache_key_name:
+    description: "Build cache key"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+  - name: Install Rust
+    shell: "bash"
+    run: rustup toolchain install ${{ inputs.rust_toolchain_release }} --profile complete
+
+  - uses: Swatinem/rust-cache@v2
+    with:
+      shared-key: ${{ inputs.build_cache_key_name }}
+      workspaces: |
+        . -> target
+      cache-targets: true
+      cache-all-crates: true
+      cache-on-failure: false
