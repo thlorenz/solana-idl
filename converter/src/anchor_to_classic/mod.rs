@@ -59,7 +59,7 @@ pub fn try_convert(idl: NewIdl) -> IdlConverterResult<Idl> {
     };
     let accounts = accounts
         .into_iter()
-        .map(idl_type_definition::convert_from_account)
+        .map(|acc| idl_type_definition::convert_from_account(acc, &types))
         .collect::<Vec<_>>();
 
     let events = if events.is_empty() {
@@ -68,7 +68,7 @@ pub fn try_convert(idl: NewIdl) -> IdlConverterResult<Idl> {
         Some(
             events
                 .into_iter()
-                .map(idl_event::convert)
+                .map(|ev| idl_event::convert(ev, &types))
                 .collect::<Vec<_>>(),
         )
     };

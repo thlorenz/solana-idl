@@ -42,14 +42,22 @@ pub fn try_convert_type_definition(
     Ok(IdlTypeDefinition { name, ty })
 }
 
-pub fn convert_from_account(idl_account: NewIdlAccount) -> IdlTypeDefinition {
+pub fn convert_from_account(
+    idl_account: NewIdlAccount,
+    idl_types: &[IdlTypeDefinition],
+) -> IdlTypeDefinition {
     let NewIdlAccount { name, .. } = idl_account;
+
     // The new format adds the type structure to the 'types` array and just points
     // to it from the account.
-    // In the classic format this is not exactly possible since an account has to be
-    // either a struct with fields or an enum with variants.
-    // To get as close as possible we create a pseudo struct with an 'defined' field which
-    // points to the type where the actual account structure is defined.
+    // So we try to find it and inline it.
+    if let Some(defined) = idl_types.iter().find(|t| t.name == name) {
+        return defined.clone();
+    }
+
+    // NOTE: we got a problem if we didn't find the type but try the best we can do:
+    // Try to replicate the new IDL behavior by creating a pseudo struct with an 'defined' field
+    // which points to the type where the actual account structure is defined.
     // The field makes no difference when the account layout is considered, but will
     // show up when accounts are parsed and in code generators.
     let ty = IdlTypeDefinitionTy::Struct {

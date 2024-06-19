@@ -140,10 +140,9 @@
         "kind": "struct",
         "fields": [
           {
-            "name": "defined",
-            "type": {
-              "defined": "Counter"
-            }
+            "name": "count",
+            "type": "u64",
+            "attrs": []
           }
         ]
       }
