@@ -11,6 +11,9 @@ Handles multiple IDL versions to provide the _classic_ IDL structure.
 use solana_idl::try_extract_classic_idl;
 let idl_json = // read JSON from somewhere
 let classic_idl = try_extract_classic_idl(idl_json).unwrap();
+
+// If you want to save the classic IDL to a file to upload, etc. do the below
+let classic_idl_json = serde_json::to_string(&classic_idl).unwrap();
 ```
 
 ## LICENSE
