@@ -6,7 +6,6 @@ resolver = "2"
 version = "0.0.4"
 edition = "2021"
 license = "MIT"
-description = "Rust Solana IDL types definitions de/serializable with serde."
 authors = ["Thorsten Lorenz <thlorenz@gmx.de>"]
 homepage = "https://github.com/thlorenz/solana-idl"
 repository = "https://github.com/thlorenz/solana-idl"

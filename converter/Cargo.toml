@@ -1,9 +1,9 @@
 [package]
 name = "solana-idl-converter"
-version = "0.0.0"
+description = "Converts Rust Solana Classic IDL types definitions de/serializable with serde from various IDL formats."
+version.workspace = true
 edition.workspace = true
 license.workspace = true
-description.workspace = true
 authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
