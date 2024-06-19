@@ -1,5 +1,5 @@
 [package]
-name = "solana-idl"
+name = "solana_idl"
 description = "Rust Solana Classic IDL types definitions de/serializable with serde and converter."
 version = "0.1.0"
 edition.workspace = true
