@@ -1,7 +1,7 @@
 use anchor_lang_idl::types::{
     IdlAccount as NewIdlAccount, IdlTypeDef as NewIdlTypeDef, IdlTypeDefTy as NewIdlTypeDefTy,
 };
-use solana_idl_classic::{IdlTypeDefinition, IdlTypeDefinitionTy};
+use solana_idl_classic::{IdlField, IdlType, IdlTypeDefinition, IdlTypeDefinitionTy};
 
 use crate::{
     anchor_to_classic::{idl_defined_fields, idl_variant},
@@ -42,4 +42,23 @@ pub fn try_convert_type_definition(
     Ok(IdlTypeDefinition { name, ty })
 }
 
-pub fn try_convert_from_account(idl_account: NewIdlAccount) {}
+pub fn convert_from_account(idl_account: NewIdlAccount) -> IdlTypeDefinition {
+    let NewIdlAccount { name, .. } = idl_account;
+    // The new format adds the type structure to the 'types` array and just points
+    // to it from the account.
+    // In the classic format this is not exactly possible since an account has to be
+    // either a struct with fields or an enum with variants.
+    // To get as close as possible we create a pseudo struct with an 'defined' field which
+    // points to the type where the actual account structure is defined.
+    // The field makes no difference when the account layout is considered, but will
+    // show up when accounts are parsed and in code generators.
+    let ty = IdlTypeDefinitionTy::Struct {
+        fields: vec![IdlField {
+            name: "defined".to_string(),
+            ty: IdlType::Defined(name.clone()),
+            attrs: None,
+        }],
+    };
+
+    IdlTypeDefinition { name, ty }
+}
