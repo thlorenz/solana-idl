@@ -1,7 +1,10 @@
 use anchor_lang_idl::types::IdlEvent as NewIdlEvent;
 use solana_idl_classic::{IdlEvent, IdlEventField, IdlType, IdlTypeDefinition};
 
-pub fn convert(idl_event: NewIdlEvent, types: &[IdlTypeDefinition]) -> IdlEvent {
+pub fn convert(
+    idl_event: NewIdlEvent,
+    types: &[IdlTypeDefinition],
+) -> IdlEvent {
     let NewIdlEvent {
         name,
         discriminator: _,

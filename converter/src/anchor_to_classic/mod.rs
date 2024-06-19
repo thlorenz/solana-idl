@@ -1,9 +1,4 @@
-#[allow(unused_imports)]
-use anchor_lang_idl::types::{
-    Idl as NewIdl, IdlAccount as NewIdlAccount, IdlConst as NewIdlConst,
-    IdlErrorCode as NewIdlErrorCode, IdlEvent as NewIdlEvent, IdlInstruction as NewIdlInstruction,
-    IdlMetadata as NewIdlMetadata, IdlTypeDef as NewIdlTypeDef,
-};
+use anchor_lang_idl::types::Idl as NewIdl;
 use solana_idl_classic::Idl;
 
 use crate::errors::IdlConverterResult;
@@ -19,6 +14,10 @@ mod idl_type;
 mod idl_type_definition;
 mod idl_variant;
 
+/// Does a best attempt at converting a new anchor>=0.30.0 IDL to the classic format
+/// that tools like solita, chainparser and most explorers understand.
+/// Some cases are not supported and will return an error, i.e. if data types like
+/// `u256` are used that weren't supported in the classic IDL format.
 pub fn try_convert(idl: NewIdl) -> IdlConverterResult<Idl> {
     let NewIdl {
         address,

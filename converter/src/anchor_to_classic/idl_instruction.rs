@@ -1,18 +1,21 @@
 use anchor_lang_idl::types::{
-    IdlDiscriminator as NewIdlDiscriminator, IdlInstruction as NewIdlInstruction,
+    IdlDiscriminator as NewIdlDiscriminator,
+    IdlInstruction as NewIdlInstruction,
     IdlInstructionAccount as NewIdlInstructionAccount,
     IdlInstructionAccountItem as NewIdlInstructionAccountItem,
     IdlInstructionAccounts as NewIdlInstructionAccounts,
 };
 use solana_idl_classic::{
-    IdlAccount, IdlAccountItem, IdlAccounts, IdlInstruction, IdlInstructionDiscriminant, IdlType,
+    IdlAccount, IdlAccountItem, IdlAccounts, IdlInstruction,
+    IdlInstructionDiscriminant, IdlType,
 };
 
+use super::idl_field;
 use crate::errors::IdlConverterResult;
 
-use super::idl_field;
-
-pub fn try_convert(idl_instruction: NewIdlInstruction) -> IdlConverterResult<IdlInstruction> {
+pub fn try_convert(
+    idl_instruction: NewIdlInstruction,
+) -> IdlConverterResult<IdlInstruction> {
     let NewIdlInstruction {
         name,
         docs: _,
@@ -67,12 +70,18 @@ fn convert_instruction_account_item(
 ) -> IdlAccountItem {
     use NewIdlInstructionAccountItem::*;
     match idl_instruction_account_item {
-        Single(account) => IdlAccountItem::IdlAccount(convert_instruction_account(account)),
-        Composite(accounts) => IdlAccountItem::IdlAccounts(convert_instruction_accounts(accounts)),
+        Single(account) => {
+            IdlAccountItem::IdlAccount(convert_instruction_account(account))
+        }
+        Composite(accounts) => {
+            IdlAccountItem::IdlAccounts(convert_instruction_accounts(accounts))
+        }
     }
 }
 
-fn convert_instruction_accounts(accounts: NewIdlInstructionAccounts) -> IdlAccounts {
+fn convert_instruction_accounts(
+    accounts: NewIdlInstructionAccounts,
+) -> IdlAccounts {
     IdlAccounts {
         name: accounts.name,
         accounts: accounts
@@ -82,7 +91,9 @@ fn convert_instruction_accounts(accounts: NewIdlInstructionAccounts) -> IdlAccou
             .collect(),
     }
 }
-fn convert_instruction_account(idl_instruction_account: NewIdlInstructionAccount) -> IdlAccount {
+fn convert_instruction_account(
+    idl_instruction_account: NewIdlInstructionAccount,
+) -> IdlAccount {
     let NewIdlInstructionAccount {
         name,
         docs,

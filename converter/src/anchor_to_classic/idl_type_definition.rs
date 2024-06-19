@@ -1,7 +1,10 @@
 use anchor_lang_idl::types::{
-    IdlAccount as NewIdlAccount, IdlTypeDef as NewIdlTypeDef, IdlTypeDefTy as NewIdlTypeDefTy,
+    IdlAccount as NewIdlAccount, IdlTypeDef as NewIdlTypeDef,
+    IdlTypeDefTy as NewIdlTypeDefTy,
 };
-use solana_idl_classic::{IdlField, IdlType, IdlTypeDefinition, IdlTypeDefinitionTy};
+use solana_idl_classic::{
+    IdlField, IdlType, IdlTypeDefinition, IdlTypeDefinitionTy,
+};
 
 use crate::{
     anchor_to_classic::{idl_defined_fields, idl_variant},
@@ -15,7 +18,9 @@ pub fn try_convert_type_def_ty(
     let converted: IdlTypeDefinitionTy = match idl_type_def_ty {
         Struct { fields } => {
             let fields = match fields {
-                Some(fields) => idl_defined_fields::try_convert_to_idl_fields(fields, context)?,
+                Some(fields) => idl_defined_fields::try_convert_to_idl_fields(
+                    fields, context,
+                )?,
                 None => vec![],
             };
             IdlTypeDefinitionTy::Struct { fields }
@@ -26,10 +31,12 @@ pub fn try_convert_type_def_ty(
                 .map(|variant| idl_variant::try_convert(variant, context))
                 .collect::<IdlConverterResult<Vec<_>>>()?,
         },
-        Type { alias: _ } => Err(IdlConverterError::UnsupportedClassicIdlType(
-            "IdlTypeDefTy::Type".to_string(),
-            context.to_string(),
-        ))?,
+        Type { alias: _ } => {
+            Err(IdlConverterError::UnsupportedClassicIdlType(
+                "IdlTypeDefTy::Type".to_string(),
+                context.to_string(),
+            ))?
+        }
     };
     Ok(converted)
 }

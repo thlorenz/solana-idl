@@ -1,9 +1,8 @@
 use anchor_lang_idl::types::IdlDefinedFields;
 use solana_idl_classic::EnumFields;
 
-use crate::errors::IdlConverterResult;
-
 use super::{idl_field, idl_type};
+use crate::errors::IdlConverterResult;
 
 pub fn try_convert_to_enum(
     idl_fields: IdlDefinedFields,

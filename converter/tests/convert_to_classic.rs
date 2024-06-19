@@ -7,7 +7,8 @@ fn test_convert_counter() {
     let new_json = include_str!("./fixtures/anchor_counter.json");
     let new_idl = serde_json::from_str::<NewIdl>(new_json).unwrap();
     let idl = try_convert(new_idl).unwrap();
-    let expected_json = include_str!("./fixtures/anchor_counter.converted.json");
+    let expected_json =
+        include_str!("./fixtures/anchor_counter.converted.json");
     let expected_idl = serde_json::from_str::<Idl>(expected_json).unwrap();
     assert_eq!(idl, expected_idl);
 }

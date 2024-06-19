@@ -1,5 +1,6 @@
-use crate::{idl_field::IdlField, idl_variant::IdlEnumVariant};
 use serde::{Deserialize, Serialize};
+
+use crate::{idl_field::IdlField, idl_variant::IdlEnumVariant};
 
 // -----------------
 // IdlTypeDefinitionTy

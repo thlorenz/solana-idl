@@ -3,7 +3,10 @@ use solana_idl_classic::IdlType;
 
 use crate::errors::{IdlConverterError, IdlConverterResult};
 
-pub fn try_convert(idl_type: NewIdlType, context: &str) -> IdlConverterResult<IdlType> {
+pub fn try_convert(
+    idl_type: NewIdlType,
+    context: &str,
+) -> IdlConverterResult<IdlType> {
     use NewIdlType::*;
     match idl_type {
         Bool => Ok(IdlType::Bool),

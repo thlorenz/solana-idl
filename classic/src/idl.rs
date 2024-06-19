@@ -1,10 +1,10 @@
 use serde::{Deserialize, Serialize};
 
-use crate::{
-    idl_error_code::IdlErrorCode, idl_instruction::IdlInstruction, idl_metadata::IdlMetadata,
-};
-
 use super::{idl_type::IdlType, idl_type_definition::IdlTypeDefinition};
+use crate::{
+    idl_error_code::IdlErrorCode, idl_instruction::IdlInstruction,
+    idl_metadata::IdlMetadata,
+};
 
 /// IDL that is compatible with what anchor and shank extract from a solana program.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]

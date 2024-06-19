@@ -1,7 +1,10 @@
 use anchor_lang_idl::types::IdlMetadata as NewIdlMetadata;
 use solana_idl_classic::IdlMetadata;
 
-pub fn convert(metadata: NewIdlMetadata, address: Option<String>) -> IdlMetadata {
+pub fn convert(
+    metadata: NewIdlMetadata,
+    address: Option<String>,
+) -> IdlMetadata {
     let address = address.or(match metadata.deployments {
         Some(deployments) => {
             // We ignore the fact that we could have conflicting addresses, i.e.

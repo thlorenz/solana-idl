@@ -1,5 +1,6 @@
-use crate::{idl_field::IdlField, idl_type::IdlType};
 use serde::{Deserialize, Serialize};
+
+use crate::{idl_field::IdlField, idl_type::IdlType};
 
 // -----------------
 // IdlInstructions

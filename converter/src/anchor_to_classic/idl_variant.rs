@@ -1,9 +1,8 @@
 use anchor_lang_idl::types::IdlEnumVariant as NewIdlEnumVariant;
 use solana_idl_classic::IdlEnumVariant;
 
-use crate::errors::IdlConverterResult;
-
 use super::idl_defined_fields;
+use crate::errors::IdlConverterResult;
 
 pub fn try_convert(
     idl_variant: NewIdlEnumVariant,
@@ -11,7 +10,9 @@ pub fn try_convert(
 ) -> IdlConverterResult<IdlEnumVariant> {
     let NewIdlEnumVariant { name, fields } = idl_variant;
     let fields = match fields {
-        Some(field) => Some(idl_defined_fields::try_convert_to_enum(field, context)?),
+        Some(field) => {
+            Some(idl_defined_fields::try_convert_to_enum(field, context)?)
+        }
         None => None,
     };
     Ok(IdlEnumVariant { name, fields })
