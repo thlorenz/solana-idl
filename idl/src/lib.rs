@@ -1,7 +1,8 @@
 use anchor_lang_idl::types::Idl as NewIdl;
 use errors::{IdlError, IdlResult};
-use solana_idl_classic::Idl;
 use solana_idl_converter::anchor_to_classic;
+
+pub use solana_idl_classic::*;
 
 pub mod errors;
 pub fn try_extract_classic_idl(json: &str) -> IdlResult<Idl> {
