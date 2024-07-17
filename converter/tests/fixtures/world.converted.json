@@ -12,18 +12,15 @@
         },
         {
           "name": "entity",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "world",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [
@@ -37,36 +34,30 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 163
+        "value": 163,
+        "bytes": [163, 241, 57, 35, 244, 244, 48, 57]
       }
     },
     {
       "name": "apply",
       "accounts": [
         {
-          "name": "component_program",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program"
         },
         {
-          "name": "bolt_system",
-          "isMut": false,
-          "isSigner": false
+          "name": "bolt_system"
         },
         {
           "name": "bolt_component",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "authority",
-          "isMut": false,
           "isSigner": true
         },
         {
           "name": "instruction_sysvar_account",
-          "isMut": false,
-          "isSigner": false
+          "address": "Sysvar1nstructions1111111111111111111111111"
         }
       ],
       "args": [
@@ -78,46 +69,37 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 248
+        "value": 248,
+        "bytes": [248, 243, 145, 24, 105, 50, 162, 225]
       }
     },
     {
       "name": "apply2",
       "accounts": [
         {
-          "name": "bolt_system",
-          "isMut": false,
-          "isSigner": false
+          "name": "bolt_system"
         },
         {
-          "name": "component_program_1",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_1"
         },
         {
           "name": "bolt_component_1",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_2",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_2"
         },
         {
           "name": "bolt_component_2",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "authority",
-          "isMut": false,
           "isSigner": true
         },
         {
           "name": "instruction_sysvar_account",
-          "isMut": false,
-          "isSigner": false
+          "address": "Sysvar1nstructions1111111111111111111111111"
         }
       ],
       "args": [
@@ -129,56 +111,44 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 120
+        "value": 120,
+        "bytes": [120, 32, 116, 154, 158, 159, 208, 73]
       }
     },
     {
       "name": "apply3",
       "accounts": [
         {
-          "name": "bolt_system",
-          "isMut": false,
-          "isSigner": false
+          "name": "bolt_system"
         },
         {
-          "name": "component_program_1",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_1"
         },
         {
           "name": "bolt_component_1",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_2",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_2"
         },
         {
           "name": "bolt_component_2",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_3",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_3"
         },
         {
           "name": "bolt_component_3",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "authority",
-          "isMut": false,
           "isSigner": true
         },
         {
           "name": "instruction_sysvar_account",
-          "isMut": false,
-          "isSigner": false
+          "address": "Sysvar1nstructions1111111111111111111111111"
         }
       ],
       "args": [
@@ -190,66 +160,51 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 254
+        "value": 254,
+        "bytes": [254, 146, 49, 7, 236, 131, 105, 221]
       }
     },
     {
       "name": "apply4",
       "accounts": [
         {
-          "name": "bolt_system",
-          "isMut": false,
-          "isSigner": false
+          "name": "bolt_system"
         },
         {
-          "name": "component_program_1",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_1"
         },
         {
           "name": "bolt_component_1",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_2",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_2"
         },
         {
           "name": "bolt_component_2",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_3",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_3"
         },
         {
           "name": "bolt_component_3",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_4",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_4"
         },
         {
           "name": "bolt_component_4",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "authority",
-          "isMut": false,
           "isSigner": true
         },
         {
           "name": "instruction_sysvar_account",
-          "isMut": false,
-          "isSigner": false
+          "address": "Sysvar1nstructions1111111111111111111111111"
         }
       ],
       "args": [
@@ -261,76 +216,58 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 223
+        "value": 223,
+        "bytes": [223, 104, 24, 79, 252, 196, 14, 109]
       }
     },
     {
       "name": "apply5",
       "accounts": [
         {
-          "name": "bolt_system",
-          "isMut": false,
-          "isSigner": false
+          "name": "bolt_system"
         },
         {
-          "name": "component_program_1",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_1"
         },
         {
           "name": "bolt_component_1",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_2",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_2"
         },
         {
           "name": "bolt_component_2",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_3",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_3"
         },
         {
           "name": "bolt_component_3",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_4",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_4"
         },
         {
           "name": "bolt_component_4",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "component_program_5",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program_5"
         },
         {
           "name": "bolt_component_5",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "authority",
-          "isMut": false,
           "isSigner": true
         },
         {
           "name": "instruction_sysvar_account",
-          "isMut": false,
-          "isSigner": false
+          "address": "Sysvar1nstructions1111111111111111111111111"
         }
       ],
       "args": [
@@ -342,7 +279,8 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 70
+        "value": 70,
+        "bytes": [70, 164, 214, 28, 136, 116, 84, 153]
       }
     },
     {
@@ -355,39 +293,31 @@
         },
         {
           "name": "data",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "entity",
-          "isMut": false,
-          "isSigner": false
+          "name": "entity"
         },
         {
-          "name": "component_program",
-          "isMut": false,
-          "isSigner": false
+          "name": "component_program"
         },
         {
-          "name": "authority",
-          "isMut": false,
-          "isSigner": false
+          "name": "authority"
         },
         {
           "name": "instruction_sysvar_account",
-          "isMut": false,
-          "isSigner": false
+          "address": "Sysvar1nstructions1111111111111111111111111"
         },
         {
           "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [],
       "discriminant": {
         "type": "u8",
-        "value": 36
+        "value": 36,
+        "bytes": [36, 143, 233, 113, 12, 234, 61, 30]
       }
     },
     {
@@ -400,24 +330,23 @@
         },
         {
           "name": "world",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "registry",
           "isMut": true,
-          "isSigner": false
+          "address": "EHLkWwAT9oebVv9ht3mtqrvHhRVMKrt54tF3MfHTey2K"
         },
         {
           "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [],
       "discriminant": {
         "type": "u8",
-        "value": 23
+        "value": 23,
+        "bytes": [23, 96, 88, 194, 200, 203, 200, 98]
       }
     },
     {
@@ -425,8 +354,7 @@
       "accounts": [
         {
           "name": "registry",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "payer",
@@ -435,14 +363,14 @@
         },
         {
           "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [],
       "discriminant": {
         "type": "u8",
-        "value": 189
+        "value": 189,
+        "bytes": [189, 181, 20, 17, 174, 57, 249, 59]
       }
     }
   ],
