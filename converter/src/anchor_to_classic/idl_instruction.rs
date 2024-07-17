@@ -114,7 +114,7 @@ fn convert_instruction_account(
         is_signer: signer,
         optional,
         desc: None,
-        docs: Some(docs),
+        docs: if docs.is_empty() { None } else { Some(docs) },
         address,
     }
 }

@@ -7,51 +7,42 @@
       "accounts": [
         {
           "name": "payer",
-          "isMut": false,
           "isSigner": true
         },
         {
           "name": "pda",
           "isMut": true,
-          "isSigner": false,
-          "desc": "CHECK The pda to delegate"
+          "docs": ["CHECK The pda to delegate"]
         },
         {
-          "name": "owner_program",
-          "isMut": false,
-          "isSigner": false
+          "name": "owner_program"
         },
         {
           "name": "buffer",
           "isMut": true,
-          "isSigner": false,
-          "desc": "CHECK The temporary buffer account used during delegation"
+          "docs": ["CHECK The temporary buffer account used during delegation"]
         },
         {
           "name": "delegation_record",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "delegate_account_seeds",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "delegation_program",
-          "isMut": false,
-          "isSigner": false
+          "name": "delegation_program"
         },
         {
           "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [],
       "discriminant": {
         "type": "u8",
-        "value": 90
+        "value": 90,
+        "bytes": [90, 147, 75, 178, 85, 88, 4, 137]
       }
     },
     {
@@ -59,14 +50,14 @@
       "accounts": [
         {
           "name": "counter",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         }
       ],
       "args": [],
       "discriminant": {
         "type": "u8",
-        "value": 11
+        "value": 11,
+        "bytes": [11, 18, 104, 9, 104, 174, 59, 33]
       }
     },
     {
@@ -74,8 +65,7 @@
       "accounts": [
         {
           "name": "counter",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
           "name": "user",
@@ -84,14 +74,14 @@
         },
         {
           "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         }
       ],
       "args": [],
       "discriminant": {
         "type": "u8",
-        "value": 175
+        "value": 175,
+        "bytes": [175, 175, 109, 31, 13, 152, 155, 237]
       }
     },
     {
@@ -99,23 +89,17 @@
       "accounts": [
         {
           "name": "base_account",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "buffer",
-          "isMut": false,
-          "isSigner": false
+          "name": "buffer"
         },
         {
           "name": "payer",
-          "isMut": true,
-          "isSigner": false
+          "isMut": true
         },
         {
-          "name": "system_program",
-          "isMut": false,
-          "isSigner": false
+          "name": "system_program"
         }
       ],
       "args": [
@@ -129,7 +113,8 @@
       ],
       "discriminant": {
         "type": "u8",
-        "value": 196
+        "value": 196,
+        "bytes": [196, 28, 41, 206, 48, 37, 51, 167]
       }
     }
   ],
