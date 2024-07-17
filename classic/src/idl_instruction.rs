@@ -50,6 +50,8 @@ pub struct IdlInstructionDiscriminant {
     #[serde(rename = "type")]
     pub ty: IdlType,
     pub value: u8,
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub bytes: Option<Vec<u8>>,
 }
 
 impl From<u8> for IdlInstructionDiscriminant {
@@ -57,6 +59,7 @@ impl From<u8> for IdlInstructionDiscriminant {
         Self {
             ty: IdlType::U8,
             value,
+            bytes: None,
         }
     }
 }
@@ -85,6 +88,16 @@ fn is_false(x: &bool) -> bool {
     !x
 }
 
+impl IdlAccountItem {
+    pub fn name(&self) -> &str {
+        use IdlAccountItem::*;
+        match self {
+            IdlAccount(account) => &account.name,
+            IdlAccounts(accounts) => &accounts.name,
+        }
+    }
+}
+
 // -----------------
 // IdlAccount
 // -----------------
@@ -96,16 +109,26 @@ pub struct IdlAccount {
     pub name: String,
 
     /// Whether the account is writable.
+    #[serde(skip_serializing_if = "is_false", default)]
     pub is_mut: bool,
 
     /// Whether the account is signer.
+    #[serde(skip_serializing_if = "is_false", default)]
     pub is_signer: bool,
 
     /// Description of the account used for documentation and by code generators.
     #[serde(skip_serializing_if = "Option::is_none", default)]
     pub desc: Option<String>,
 
+    /// Account documentation.
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub docs: Option<Vec<String>>,
+
     /// Whether the account is optional or not.
     #[serde(skip_serializing_if = "is_false", default)]
     pub optional: bool,
+
+    /// Default ddress of the account.
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub address: Option<String>,
 }

@@ -53,12 +53,15 @@ fn convert_discriminant(
     idl_discriminator: NewIdlDiscriminator,
 ) -> Option<IdlInstructionDiscriminant> {
     // NOTE: it's impossible to properly convert a Vec<u8> to a u8, so we do our
-    // best attempt
+    // best attempt, however we include the full bytes as well so that tools
+    // that deserialize instruction IDLs have access to it.
     idl_discriminator
         .first()
+        .cloned()
         .map(|first| IdlInstructionDiscriminant {
             ty: IdlType::U8,
-            value: *first,
+            value: first,
+            bytes: Some(idl_discriminator),
         })
 }
 
@@ -100,21 +103,18 @@ fn convert_instruction_account(
         writable,
         signer,
         optional,
-        address: _,
+        address,
         pda: _,
         relations: _,
     } = idl_instruction_account;
 
-    let desc = if docs.is_empty() {
-        None
-    } else {
-        Some(docs.join("\n"))
-    };
     IdlAccount {
         name,
         is_mut: writable,
         is_signer: signer,
         optional,
-        desc,
+        desc: None,
+        docs: Some(docs),
+        address,
     }
 }
